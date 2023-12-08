@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-6">
+        <h2 class=".pagina_user mb-5 mt-5">{% block title %} {{ user_data['nome_usual'] }} {% endblock %}</h2>
+        <img class="mb-5" src="https://suap.ifrn.edu.br{{ user_data['url_foto_150x200'] }}" alt="foto">
+    </div>
+</div>
+
+{% for field in user_data %}
+<div class="row justify-content-center">
+    <div class="col-6">
+        <p class=".pagina_user"> <b>{{ field }}</b>: {{ user_data[field] }} </p>
+    </div>
+</div>
+
+
+{% endfor %}
+
+<div class="row justify-content-center">
+    <div class="col-6">
+        <p><a href="{{url_for('boletim')}}">Boletim</a></p>
+
+        <p><a href="{{url_for('logout')}}">Logout</a></p>
+    </div>
+</div>
+
+
+{% endblock %}

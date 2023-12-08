@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container-fluid mt-5">
+    <div class="row mt-5">
+        <div class="col-md-12 mt-5 login-container">
+            <form class="login-form mt-5">
+                <h4 class="text-center">{% block title %} Login OAuth SUAP {% endblock %}</h4>
+                <p class="text-center">Faça seu login para continuar.</p>
+                <a class="btn btn-success btn-lg  btn-block" href="{{url_for('login')}}">Entrar</a>
+                <br>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
